@@ -1,19 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="QY5-3w-CDe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Card Game View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="n5n-KR-Q53">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="QY5-3w-CDe" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="XdV-HY-z82">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="cbi-K0-jx1"/>
+                        <segue destination="58p-Cf-jqn" kind="relationship" relationship="viewControllers" id="7EL-BP-Ygb"/>
+                        <segue destination="gGE-LG-svs" kind="relationship" relationship="viewControllers" id="M1i-YR-coQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9R-XB-nVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2460" y="50"/>
+        </scene>
+        <!--Game Result View Controller - Scores-->
+        <scene sceneID="gnW-sE-wSu">
+            <objects>
+                <viewController title="Scores" id="58p-Cf-jqn" customClass="GameResultViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cnK-RS-gDn">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="VQV-EA-seK">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="857"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L5n-MQ-ZYc">
+                                <rect key="frame" x="27" y="892" width="80" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="By Date">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JfW-nc-ePv">
+                                <rect key="frame" x="113" y="892" width="90" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="By Score">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lay-6i-8GM">
+                                <rect key="frame" x="211" y="892" width="110" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="By Duration">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Game Scores" id="dWk-zV-hhP"/>
+                    <connections>
+                        <outlet property="display" destination="VQV-EA-seK" id="WDa-Fw-Ktc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtU-ar-3pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1484" y="782"/>
+        </scene>
+        <!--Card Game View Controller - Card Match-->
         <scene sceneID="4">
             <objects>
-                <viewController id="2" customClass="CardGameViewController" sceneMemberID="viewController">
+                <viewController title="Card Match" id="2" customClass="CardGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W0c-Yp-hzm">
-                                <rect key="frame" x="7" y="4" width="180" height="231"/>
+                                <rect key="frame" x="22" y="19.5" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +113,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aGi-Ef-JCO">
-                                <rect key="frame" x="198" y="4" width="180" height="231"/>
+                                <rect key="frame" x="213" y="19.5" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,14 +130,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cards Flipped:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="blg-26-kId">
-                                <rect key="frame" x="20" y="974" width="115" height="21"/>
+                                <rect key="frame" x="14" y="911" width="115" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yYK-t4-WD0">
-                                <rect key="frame" x="390" y="4" width="180" height="231"/>
+                                <rect key="frame" x="405" y="19.5" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +154,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mTt-1a-jkJ">
-                                <rect key="frame" x="580" y="4" width="180" height="231"/>
+                                <rect key="frame" x="595" y="19.5" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,7 +171,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lPr-IY-1Yk">
-                                <rect key="frame" x="7" y="242" width="180" height="231"/>
+                                <rect key="frame" x="20" y="226" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,7 +188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PIG-Wv-ZAG">
-                                <rect key="frame" x="198" y="242" width="180" height="231"/>
+                                <rect key="frame" x="211" y="226" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -122,7 +205,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cph-8e-85h">
-                                <rect key="frame" x="390" y="242" width="180" height="231"/>
+                                <rect key="frame" x="403" y="226" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,7 +222,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dSy-Mk-L8i">
-                                <rect key="frame" x="580" y="242" width="180" height="231"/>
+                                <rect key="frame" x="593" y="226" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,7 +239,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HaF-VD-VlZ">
-                                <rect key="frame" x="7" y="480" width="180" height="231"/>
+                                <rect key="frame" x="20" y="433" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -173,7 +256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pbs-uE-Plm">
-                                <rect key="frame" x="198" y="480" width="180" height="231"/>
+                                <rect key="frame" x="211" y="433" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -190,7 +273,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JUs-9u-SuF">
-                                <rect key="frame" x="390" y="480" width="180" height="231"/>
+                                <rect key="frame" x="403" y="433" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -207,7 +290,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9zG-4D-GFF">
-                                <rect key="frame" x="580" y="480" width="180" height="231"/>
+                                <rect key="frame" x="593" y="433" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,14 +307,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a52-c8-kW2">
-                                <rect key="frame" x="20" y="955" width="115" height="21"/>
+                                <rect key="frame" x="14" y="892" width="115" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dGp-8q-ztE">
-                                <rect key="frame" x="7" y="718" width="180" height="231"/>
+                                <rect key="frame" x="20" y="640" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,7 +331,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CAQ-Bk-s3p">
-                                <rect key="frame" x="198" y="718" width="180" height="231"/>
+                                <rect key="frame" x="211" y="640" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,7 +348,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dhT-8y-DvE">
-                                <rect key="frame" x="390" y="718" width="180" height="231"/>
+                                <rect key="frame" x="403" y="640" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,7 +365,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dt6-u2-4ex">
-                                <rect key="frame" x="580" y="718" width="180" height="231"/>
+                                <rect key="frame" x="593" y="640" width="150" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="117"/>
                                 <color key="tintColor" red="0.91847826089999995" green="0.79272650359999997" blue="0.047199681059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -299,14 +382,14 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="GAr-oc-IMQ">
-                                <rect key="frame" x="388" y="969" width="177" height="23"/>
+                                <rect key="frame" x="382" y="906" width="177" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="historySliderValueChange:" destination="2" eventType="valueChanged" id="S4R-OE-DWT"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OPc-7c-dr5">
-                                <rect key="frame" x="297" y="955" width="70" height="44"/>
+                                <rect key="frame" x="291" y="894" width="70" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="DEAL!">
@@ -321,10 +404,10 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="QX4-OR-5io">
-                                <rect key="frame" x="143" y="955" width="139" height="44"/>
+                                <rect key="frame" x="137" y="892" width="139" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="2Card"/>
+                                    <segment title="2Card" enabled="NO"/>
                                     <segment title="3Card"/>
                                 </segments>
                                 <connections>
@@ -332,7 +415,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sx3-7z-lKk">
-                                <rect key="frame" x="570" y="956" width="190" height="42"/>
+                                <rect key="frame" x="564" y="893" width="190" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -341,6 +424,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Card Match" id="iUy-rc-xVt"/>
                     <connections>
                         <outlet property="flipsLabel" destination="blg-26-kId" id="5QT-3e-dwf"/>
                         <outlet property="historySlider" destination="GAr-oc-IMQ" id="WyV-qh-al0"/>
@@ -367,24 +451,819 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1467" y="-421"/>
+        </scene>
+        <!--Set Game View Controller - Card Match-->
+        <scene sceneID="sEy-xh-m9z">
+            <objects>
+                <viewController title="Card Match" id="gGE-LG-svs" customClass="SetGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j0z-i0-Bo7">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="wxu-Ok-viO">
+                                <rect key="frame" x="20" y="20" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="Mc1-1F-EQl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pj3-xA-Ie3">
+                                <rect key="frame" x="20" y="901" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="VQe-tS-lNk">
+                                <rect key="frame" x="234" y="911" width="300" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="historySliderValueChange:" destination="gGE-LG-svs" eventType="valueChanged" id="SA3-h7-XCJ"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RHQ-ui-P8Z">
+                                <rect key="frame" x="629" y="901" width="70" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="DEAL!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deal" destination="gGE-LG-svs" eventType="touchUpInside" id="Bbf-Sq-8E4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DyD-YU-bqP">
+                                <rect key="frame" x="20" y="815" width="728" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="aB1-kG-JVK">
+                                <rect key="frame" x="210" y="20" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="xgg-dd-LFe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="HXr-jl-aez">
+                                <rect key="frame" x="396" y="20" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="ZKx-kv-Vqu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="GSr-kj-1Aj">
+                                <rect key="frame" x="581" y="20" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="g9z-SO-gRw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="CKh-TI-NBz">
+                                <rect key="frame" x="20" y="146" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="X1h-RX-Uaa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Jo1-QK-ZjR">
+                                <rect key="frame" x="210" y="146" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="qGQ-Rj-S0a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="I8M-b2-TJ0">
+                                <rect key="frame" x="396" y="146" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="o7c-od-Stu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="bF3-kp-oqH">
+                                <rect key="frame" x="581" y="146" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="3Pl-Yy-LCL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="ZYs-KO-8KF">
+                                <rect key="frame" x="20" y="272" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="63v-b6-Jtc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="1IW-ry-UFB">
+                                <rect key="frame" x="210" y="272" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="82c-1s-hQW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="1bF-pa-euW">
+                                <rect key="frame" x="396" y="272" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="dSb-MB-I32"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="tC2-37-tMs">
+                                <rect key="frame" x="581" y="272" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="hmf-Gj-ntV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="7yu-nV-uMs">
+                                <rect key="frame" x="20" y="398" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="kHt-se-Wxt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="rxI-IN-L8x">
+                                <rect key="frame" x="210" y="398" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="yc9-Bk-MQo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="N0q-Ga-ST9">
+                                <rect key="frame" x="396" y="398" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="Bsh-1P-G1c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="uL5-fg-R0g">
+                                <rect key="frame" x="581" y="398" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="lFI-Hi-i2p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="YHT-6W-aSg">
+                                <rect key="frame" x="20" y="524" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="Qyy-15-NRw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="GVB-DV-ANj">
+                                <rect key="frame" x="210" y="524" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="T6g-7P-YV3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Rvb-Ej-r7C">
+                                <rect key="frame" x="396" y="524" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="uec-KB-35e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="mwi-Ye-3HP">
+                                <rect key="frame" x="581" y="524" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="Qj8-I1-6MY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="5T8-4U-Ady">
+                                <rect key="frame" x="20" y="650" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="VxU-Vd-xdb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="JTa-X4-91i">
+                                <rect key="frame" x="210" y="650" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="BIq-v1-6lz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="2NP-Os-5cw">
+                                <rect key="frame" x="396" y="650" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="4r8-if-AFe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="8sV-IR-NXz">
+                                <rect key="frame" x="581" y="650" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  ■  ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.85882352941176465" green="0.17254901960784313" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="gGE-LG-svs" eventType="touchUpInside" id="oUD-GK-5eQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JVA-Y1-qRq">
+                                <rect key="frame" x="20" y="921" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Set" id="Da4-Fq-5iW"/>
+                    <connections>
+                        <outlet property="flipsLabel" destination="JVA-Y1-qRq" id="Nv4-7i-vhb"/>
+                        <outlet property="historySlider" destination="VQe-tS-lNk" id="Yzi-ke-iuD"/>
+                        <outlet property="resultsLabel" destination="DyD-YU-bqP" id="542-Vp-qwK"/>
+                        <outlet property="scoreLabel" destination="pj3-xA-Ie3" id="EPJ-bK-Fhv"/>
+                        <outletCollection property="cardButtons" destination="wxu-Ok-viO" id="La3-h0-Ftt"/>
+                        <outletCollection property="cardButtons" destination="wxu-Ok-viO" id="Dju-QW-yYt"/>
+                        <outletCollection property="cardButtons" destination="aB1-kG-JVK" id="SP0-dY-r57"/>
+                        <outletCollection property="cardButtons" destination="HXr-jl-aez" id="yjw-lK-jHn"/>
+                        <outletCollection property="cardButtons" destination="GSr-kj-1Aj" id="xgS-Rg-jrD"/>
+                        <outletCollection property="cardButtons" destination="CKh-TI-NBz" id="gEM-ma-662"/>
+                        <outletCollection property="cardButtons" destination="Jo1-QK-ZjR" id="VNL-7B-U81"/>
+                        <outletCollection property="cardButtons" destination="I8M-b2-TJ0" id="ZfS-Gg-9Jc"/>
+                        <outletCollection property="cardButtons" destination="bF3-kp-oqH" id="UF8-PL-aV6"/>
+                        <outletCollection property="cardButtons" destination="ZYs-KO-8KF" id="n6f-aK-Tzc"/>
+                        <outletCollection property="cardButtons" destination="1IW-ry-UFB" id="A8h-dA-xFO"/>
+                        <outletCollection property="cardButtons" destination="1bF-pa-euW" id="Cs2-RR-JED"/>
+                        <outletCollection property="cardButtons" destination="tC2-37-tMs" id="0l5-ki-80G"/>
+                        <outletCollection property="cardButtons" destination="7yu-nV-uMs" id="Njb-LM-cj8"/>
+                        <outletCollection property="cardButtons" destination="rxI-IN-L8x" id="BMt-Pb-ajR"/>
+                        <outletCollection property="cardButtons" destination="N0q-Ga-ST9" id="uea-8s-jEn"/>
+                        <outletCollection property="cardButtons" destination="uL5-fg-R0g" id="4Kj-WF-6Wb"/>
+                        <outletCollection property="cardButtons" destination="mwi-Ye-3HP" id="bCj-mN-BSM"/>
+                        <outletCollection property="cardButtons" destination="Rvb-Ej-r7C" id="Qyu-FK-pby"/>
+                        <outletCollection property="cardButtons" destination="GVB-DV-ANj" id="Ngl-L0-bhF"/>
+                        <outletCollection property="cardButtons" destination="YHT-6W-aSg" id="35M-S8-wb8"/>
+                        <outletCollection property="cardButtons" destination="5T8-4U-Ady" id="sgw-Mx-wLt"/>
+                        <outletCollection property="cardButtons" destination="JTa-X4-91i" id="brr-tb-PdJ"/>
+                        <outletCollection property="cardButtons" destination="2NP-Os-5cw" id="wer-fS-X9u"/>
+                        <outletCollection property="cardButtons" destination="8sV-IR-NXz" id="dr1-LT-W5N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4VN-ev-K2R" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1495" y="1939"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CardGameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
-                <relationship kind="action" name="historySliderValueChange:" candidateClass="UISlider"/>
-                <relationship kind="action" name="playModeChange:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="historySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="playModeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -17,44 +17,7 @@
 
 @implementation CardMatchingGame
 
--(CardMatchingGame *) init
-{
-    return nil;
-}
 
--(id) initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
-{
-    self = [super init];
-    
-    if (self) {
-        for (int i =0; i < count; i++)
-        {
-            Card * card = [deck drawRandomCard];
-            if (!card) {
-                self = nil;
-            } else {
-                self.cards[i] = card;
-            }
-        }
-    }
-    return self;
-}
-
-- (NSMutableArray *) cards
-{
-    if (!_cards) _cards = [[NSMutableArray alloc] init];
-    return _cards;
-}
-
-- (Card *) cardAtIndex:(NSUInteger)index
-{
-    return (index < self.cards.count) ? self.cards[index] : nil;
-}
-
-#define FLIP_COST 1
-#define MATCH2_BONUS 4
-#define MATCH3_BONUS 8
-#define MISMATCH_PENALTY 2
 
 - (void) flipCardAtIndex:(NSUInteger)index
 {
@@ -62,7 +25,7 @@
         case 1:
             [self match3:index];
             break;
-        default: //go by default to case 2 might be modified if other playModes are added in the future
+        default: //go by default to 2 card , might be modified if other playModes are added in the future
             [self match2:index];
             break;
     }    
@@ -82,18 +45,18 @@
                     if (matchScore) {
                         otherCard.unplayable = YES;
                         card.unplayable = YES;
-                        int playScore = matchScore * MATCH2_BONUS;
+                        int playScore = matchScore * self.matchBonus;
                         self.score += playScore;
                         self.resultSring = [NSString stringWithFormat:@"Matched %@ & %@\nfor %d points",card.contents,otherCard.contents,playScore];
                     } else {
                         otherCard.faceUp = NO;
-                        self.score -= MISMATCH_PENALTY;
-                        self.resultSring = [NSString stringWithFormat:@"%@ & %@ don't match!\n%d point penalty",card.contents,otherCard.contents,MISMATCH_PENALTY];
+                        self.score -= self.mismatchPenalty;
+                        self.resultSring = [NSString stringWithFormat:@"%@ & %@ don't match!\n%d point penalty",card.contents,otherCard.contents,self.mismatchPenalty];
                     }
                     break;
                 }
             }
-            self.score -= FLIP_COST;
+            self.score -= self.flipCost;
             
         }
         if (card.faceUp) self.resultSring = nil;
@@ -122,14 +85,14 @@
                         
                         if (matchScore) {// WE HAVE A TRIPLE MATCH!
                             card2.unplayable = card3.unplayable = card.unplayable = YES; //make all three cards unplayable
-                            int playScore = matchScore * MATCH3_BONUS;
+                            int playScore = matchScore * (self.matchBonus+2);
                             self.score += playScore;                                     //update score
                             self.resultSring = [NSString stringWithFormat:@"Matched %@ %@ %@\nfor %d points!",card.contents,card2.contents, card3.contents,playScore];
                         } else { // THIRD CARD WASN'T A MATCH!! OOPS!
                         card2.faceUp = NO;
                         card3.faceUp = NO;
-                        self.score -= MISMATCH_PENALTY;
-                        self.resultSring = [NSString stringWithFormat:@"%@ %@ %@ don't match!\n%d point penalty",card.contents,card2.contents,card3.contents,MISMATCH_PENALTY];
+                        self.score -= self.mismatchPenalty;
+                        self.resultSring = [NSString stringWithFormat:@"%@ %@ %@ don't match!\n%d point penalty",card.contents,card2.contents,card3.contents,self.mismatchPenalty];
                         }
                     break;
                     } else if ([otherCards count] == 1) { //this is the first faceup card,so we need to check if its a match
@@ -138,14 +101,14 @@
                             self.resultSring = [NSString stringWithFormat:@"Matched %@ & %@\nfind another match",card.contents,otherCard.contents];
                         } else {
                             otherCard.faceUp = NO;
-                            self.score -= MISMATCH_PENALTY;
-                            self.resultSring = [NSString stringWithFormat:@"%@ & %@ don't match!\n%d point penalty",card.contents,otherCard.contents,MISMATCH_PENALTY];
+                            self.score -= self.mismatchPenalty;
+                            self.resultSring = [NSString stringWithFormat:@"%@ & %@ don't match!\n%d point penalty",card.contents,otherCard.contents,self.mismatchPenalty];
                         }                    
                     }
 
                 }
             }
-            self.score -= FLIP_COST;
+            self.score -= self.flipCost;
             
         }
         if (card.faceUp) self.resultSring = nil;

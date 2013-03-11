@@ -45,7 +45,7 @@
 - (NSString *) contents
 {
     NSArray *rankStrings = [PlayingCard rankStrings];
-    return [rankStrings [self.rank] stringByAppendingString:self.suit];
+    return [rankStrings[self.rank] stringByAppendingString:self.suit];
     
 }
 
@@ -59,6 +59,8 @@
     if ([[PlayingCard validSuits] containsObject:suit])
         _suit = suit;
 }
+
+
 
 + (NSArray *)rankStrings
 {

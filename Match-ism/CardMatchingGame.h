@@ -8,20 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Deck.h"
+#import "CardGame.h"    
 
-@interface CardMatchingGame : NSObject
-
-//designated Initializer
-- (id) initWithCardCount:(NSUInteger)cardCount
-               usingDeck:(Deck *) deck;
+@interface CardMatchingGame : CardGame
 
 - (void) flipCardAtIndex: (NSUInteger) index;
-
-- (Card *) cardAtIndex: (NSUInteger) index;
-
-@property (nonatomic, readonly) int score;
-@property (nonatomic, readonly) NSString * resultSring;
-@property (nonatomic) int playMode;
 
 
 @end

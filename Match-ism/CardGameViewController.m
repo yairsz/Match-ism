@@ -8,6 +8,7 @@
 
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
+#import "GameResult.h"  
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
@@ -16,9 +17,10 @@
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *playModeSegmentedControl;
 @property (nonatomic) int flipCount;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame * game;
 @property (strong,nonatomic) NSMutableArray * flipHistory; //of strings
+@property (nonatomic) int previousPlayMode;
+@property (strong , nonatomic) GameResult *gameResult;
 
 @end
 
@@ -26,10 +28,22 @@
 
 
 # pragma mark Setters and Getters
+
+- (GameResult *) gameResult
+{
+    if (!_gameResult) _gameResult = [[GameResult alloc] init];
+    return _gameResult;
+}
+
 - (CardMatchingGame *) game
 {
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+    if (!_game) {
+        
+    _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
                                                           usingDeck:[[PlayingCardDeck alloc]init]];
+    _game.playMode = self.previousPlayMode;
+    [_game defineBonusSchemeWithArray:@[@2,@2,@-1]];
+    }
     return _game;
 }
 
@@ -45,6 +59,7 @@
     //LAZY INSTANTIATION!
     _flipCount = flipCount;
     self.flipsLabel.text = [NSString stringWithFormat:@"Cards Flipped: %d",self.flipCount];
+    self.gameResult.score = self.game.score;
 }
 
 -(NSMutableArray*)flipHistory{
@@ -105,24 +120,22 @@
     
     [self changeResultsLabelWithIndex:[self.historySlider maximumValue]];
     [self updateUI];
+    self.gameResult.score = self.game.score;
 }
 
 
 - (IBAction)deal
 {
     // Remember previous play mode
-    int playMode = self.game.playMode;
-    
-    _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
-                                              usingDeck:[[PlayingCardDeck alloc]init]];
-    //reset play mode
-    self.game.playMode = playMode;
+    self.previousPlayMode = self.game.playMode;
+    self.game = nil;
     
     //reset all game UI stuff
     self.flipHistory = nil;
     self.historySlider.maximumValue=0;
     self.historySlider.enabled = NO;
     self.flipCount = 0;
+    self.resultsLabel.attributedText = nil;
     [self updateUI];    
     self.playModeSegmentedControl.enabled = YES;
 }
@@ -142,7 +155,7 @@
 
 - (void) changeResultsLabelWithIndex:(int)index
 {
-    // This method is created so flipCard can also change 
+    // This method is created so flipCard can also change the results label when a card is flipped
     if (self.flipHistory.count > 0){
     self.resultsLabel.alpha = (index == self.historySlider.maximumValue) ? 1.0 : 0.3;
     self.resultsLabel.text = [self.flipHistory objectAtIndex:index];

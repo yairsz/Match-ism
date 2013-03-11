@@ -13,6 +13,6 @@
 
 @interface CardGameViewController : UIViewController
 
-
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @end
